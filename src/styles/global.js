@@ -4,9 +4,13 @@ export const GlobalStyles = createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
+        
     }
     body{
         background-color: #1e192c;
         color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+
     }
+    
 `
