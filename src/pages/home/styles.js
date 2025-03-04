@@ -10,7 +10,7 @@ export const Container = styled.main`
     flex-direction: row;
     justify-content: space-between;
     align-item: center
-`;
+`
 
 export const Title = styled.h2`
     font-family: "Open Sans", sans-serif;

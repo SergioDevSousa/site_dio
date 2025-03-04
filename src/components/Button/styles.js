@@ -4,12 +4,11 @@ export const ButtonContainer = styled.button`
     background: #565656;
     border-radius: 22px;
     position: relative;
-   
-
     color: #ffffff;
     padding: 2px 12px;
     min-width: 120px;
     width: 100%;
+    margin: 5px;
 
     &:hover{
             opacity: 0.6;
