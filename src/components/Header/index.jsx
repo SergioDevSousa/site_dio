@@ -24,7 +24,7 @@ const Header = () => {
                     <Menu>Global</Menu>
                 </Row>
                 <Row>
-                    <MenuRight href="#">Home</MenuRight>
+                    <MenuRight href="/">Home</MenuRight>
                     <Button title="Entrar"/>
                     <Button title="Cadastrar"/>
                 </Row>
