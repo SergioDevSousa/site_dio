@@ -3,9 +3,10 @@ import { MdEmail, MdLock } from "react-icons/md"
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
-import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
 import { api } from '../../service/api';
 import { useForm } from "react-hook-form";
+import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
+
 
 const Login = () => {
   const navigate = useNavigate()
@@ -17,7 +18,7 @@ const Login = () => {
 
 const onSubmit = async (formData) => {
     try{
-        const {data} = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
+        const { data } = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
         
         if(data.length && data[0].id){
             navigate('/feed') 
@@ -49,8 +50,8 @@ console.log('errors', errors);
                 <Input placeholder="E-mail..." leftIcon={<MdEmail />} name="email" control={control} />
                 {errors.email && <span>E-mail é Obrigatório</span>}
                 <Input placeholder="Senha" type="password" leftIcon={<MdLock />} name="senha" control={control} />
-                {errors.email && <span>A senha é Obrigatório</span>}
-                <Button title="Entrar" variant="secondary" />
+                {errors.senha && <span>A senha é Obrigatório</span>}
+                <Button title="Entrar" variant="secondary" type="submit"/>
               </form>
               <Row>
                 <EsqueciText>Esqueci minha senha</EsqueciText>

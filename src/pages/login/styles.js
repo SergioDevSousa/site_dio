@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.main`
     width: 100%;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 120px 150px;
+    gap: 260px;
     margin-top: 120px;
 
     display: flex;
@@ -27,8 +28,6 @@ export const Row = styled.div`
     align-items: center;
     margin-top: 20px;
 `
-
-
 
 export const Title = styled.h2`
     font-family: 'Open Sans';

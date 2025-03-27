@@ -36,4 +36,4 @@ const Feed = () => {
   )
 }
 
-export { Feed }; 
+export default Feed; 
