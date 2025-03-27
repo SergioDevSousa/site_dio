@@ -1,24 +1,27 @@
 import { useNavigate  } from "react-router-dom";
-import { MdEmail, MdLock } from "react-icons/md"
+import { MdEmail, MdLock } from "react-icons/md";
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { api } from '../../service/api';
 import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup"
+// import * as yup from "yup"
 import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
 
 
 const Login = () => {
   const navigate = useNavigate()
 
-  const { control, handleSubmit, formState: { errors  } } = useForm({
+  const { control, handleSubmit, formState: { errors } } = useForm({
     reValidateMode: 'onChange',
     mode: 'onChange',
 });
 
 const onSubmit = async (formData) => {
+    console.log(formData)
     try{
-        const { data } = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
+        const { data } = await api.get(`users?email=${formData.email}&senha=${formData.senha}`);
         
         if(data.length && data[0].id){
             navigate('/feed') 
@@ -27,11 +30,10 @@ const onSubmit = async (formData) => {
 
         alert('Usuário ou senha inválido')
     }catch(e){
-        //TODO: HOUVE UM ERRO
+      console.error('Erro ao tentar logar', e);
+      alert('Erro ao tentar logar');
     }
 };
-
-console.log('errors', errors);
 
   return (
     <>
