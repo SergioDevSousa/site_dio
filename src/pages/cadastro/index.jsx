@@ -1,5 +1,5 @@
 import { useNavigate  } from "react-router-dom";
-import { MdEmail, MdLock } from "react-icons/md";
+import { Md10K, Md123, MdEmail, MdLock, MdUsb } from "react-icons/md";
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
 
 
-const Login = () => {
+const Cadastro = () => {
   const navigate = useNavigate()
 
   const { control, handleSubmit, formState: { errors } } = useForm({
@@ -44,9 +44,11 @@ const onSubmit = async (formData) => {
           </Column>
           <Column>
             <Wrapper>
-              <TitleLogin>Comece agora grátis</TitleLogin>
-              <SubtitleLogin>Crie sua conta e make the change._</SubtitleLogin>
+              <TitleLogin>Faça seu cadastro</TitleLogin>
+              <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
               <form onSubmit={handleSubmit(onSubmit)}>
+                <Input placeholder="Nome..." leftIcon={<Md123 />} name="nome" control={control} />
+                {errors.nome && <span>Nome é Obrigatório</span>}
                 <Input placeholder="E-mail..." leftIcon={<MdEmail />} name="email" control={control} />
                 {errors.email && <span>E-mail é Obrigatório</span>}
                 <Input placeholder="Senha" type="password" leftIcon={<MdLock />} name="senha" control={control} />
@@ -54,8 +56,8 @@ const onSubmit = async (formData) => {
                 <Button title="Entrar" variant="secondary" type="submit"/>
               </form>
               <Row>
-                <EsqueciText>Esqueci minha senha</EsqueciText>
-                <CriarText>Criar conta</CriarText>
+                <EsqueciText>Já tenho conta</EsqueciText>
+                <CriarText>Fazer login</CriarText>
               </Row>
             </Wrapper>
           </Column>
@@ -65,4 +67,4 @@ const onSubmit = async (formData) => {
   )
 }
 
-export default Login;
+export default Cadastro;
