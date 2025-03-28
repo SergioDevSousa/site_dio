@@ -1,5 +1,5 @@
 import { useNavigate  } from "react-router-dom";
-import { Md10K, Md123, MdEmail, MdLock, MdUsb } from "react-icons/md";
+import { MdAccountCircle, MdEmail, MdLock } from "react-icons/md";
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
@@ -47,7 +47,7 @@ const onSubmit = async (formData) => {
               <TitleLogin>Faça seu cadastro</TitleLogin>
               <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <Input placeholder="Nome..." leftIcon={<Md123 />} name="nome" control={control} />
+                <Input placeholder="Nome..." leftIcon={<MdAccountCircle />} name="nome" control={control} />
                 {errors.nome && <span>Nome é Obrigatório</span>}
                 <Input placeholder="E-mail..." leftIcon={<MdEmail />} name="email" control={control} />
                 {errors.email && <span>E-mail é Obrigatório</span>}
